@@ -1,5 +1,5 @@
-chcp 1251 - кодировка cmd нормальная psql \! chcp 1251 - внутри psql
-pg_ctl start - запуск
+п»їchcp 1251 - РєРѕРґРёСЂРѕРІРєР° cmd РЅРѕСЂРјР°Р»СЊРЅР°СЏ psql \! chcp 1251 - РІРЅСѓС‚СЂРё psql
+pg_ctl start - Р·Р°РїСѓСЃРє
 psql -d "Test DB" -U postgres ; pass 1234
 
 Test DB=# CREATE TABLE my_contacts (
@@ -9,22 +9,22 @@ CREATE TABLE
 Test DB=# CREATE TABLE list (
 Test DB(# name text NOT NULL,
 Test DB(# type VARCHAR(6) NOT NULL,
-Test DB(# cost DEC(3,2) NOT NULL DEFAULT 1.00); DEC(3,2) - 3 число всех цифр, 2 - после запятой
+Test DB(# cost DEC(3,2) NOT NULL DEFAULT 1.00); DEC(3,2) - 3 С‡РёСЃР»Рѕ РІСЃРµС… С†РёС„СЂ, 2 - РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№
 CREATE TABLE
 
 Test DB=# INSERT INTO list (name, type)
-Test DB-# values ('Doughnut', '{с н}');
+Test DB-# values ('Doughnut', '{СЃ РЅ}');
 
 CREATE TABLE easy_drinks (drink_name text [], main VARCHAR(20), amount DEC(2,1), second text[], amount2 DEC(3,2), directions text[]);
-INSERT INTO easy_drinks (drink_name, main, amount, second, amount2, directions) VALUES ('{Терновик}', '{тоник}', 1.5,'{ананасовый сок}', 1, '{взболтать со льдом, разлито по бокалам, украсить лимонной цедрой}');
-INSERT INTO easy_drinks VALUES ('{Бабье лето}', 'Яблочный сок', 1.5,'{Горячий чай}', 1, 
-'{взболтать со льдом, разлито по бокалам, украсить лимонной цедрой}'); Ебал я исспользовать массивы!!! VARCHAR(n) лучше
+INSERT INTO easy_drinks (drink_name, main, amount, second, amount2, directions) VALUES ('{РўРµСЂРЅРѕРІРёРє}', '{С‚РѕРЅРёРє}', 1.5,'{Р°РЅР°РЅР°СЃРѕРІС‹Р№ СЃРѕРє}', 1, '{РІР·Р±РѕР»С‚Р°С‚СЊ СЃРѕ Р»СЊРґРѕРј, СЂР°Р·Р»РёС‚Рѕ РїРѕ Р±РѕРєР°Р»Р°Рј, СѓРєСЂР°СЃРёС‚СЊ Р»РёРјРѕРЅРЅРѕР№ С†РµРґСЂРѕР№}');
+INSERT INTO easy_drinks VALUES ('{Р‘Р°Р±СЊРµ Р»РµС‚Рѕ}', 'РЇР±Р»РѕС‡РЅС‹Р№ СЃРѕРє', 1.5,'{Р“РѕСЂСЏС‡РёР№ С‡Р°Р№}', 1, 
+'{РІР·Р±РѕР»С‚Р°С‚СЊ СЃРѕ Р»СЊРґРѕРј, СЂР°Р·Р»РёС‚Рѕ РїРѕ Р±РѕРєР°Р»Р°Рј, СѓРєСЂР°СЃРёС‚СЊ Р»РёРјРѕРЅРЅРѕР№ С†РµРґСЂРѕР№}'); Р•Р±Р°Р» СЏ РёСЃСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РјР°СЃСЃРёРІС‹!!! VARCHAR(n) Р»СѓС‡С€Рµ
 
-SELECT main FROM easy_drinks WHERE drink_name ='{Терновик}';
+SELECT main FROM easy_drinks WHERE drink_name ='{РўРµСЂРЅРѕРІРёРє}';
 
 SELECT * FROM my_contacts
-WHERE location LIKE '%CA'; - все значения столбца, кончающиеся на CA (% - любое количество смволов, _ - один символ)
-SELECT model, type FROM product WHERE model NOT LIKE '%[^0-9]%' OR model NOT LIKE '%[^a-z]%' - Где либо только цифры, либо только буквы
+WHERE location LIKE '%CA'; - РІСЃРµ Р·РЅР°С‡РµРЅРёСЏ СЃС‚РѕР»Р±С†Р°, РєРѕРЅС‡Р°СЋС‰РёРµСЃСЏ РЅР° CA (% - Р»СЋР±РѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРјРІРѕР»РѕРІ, _ - РѕРґРёРЅ СЃРёРјРІРѕР»)
+SELECT model, type FROM product WHERE model NOT LIKE '%[^0-9]%' OR model NOT LIKE '%[^a-z]%' - Р“РґРµ Р»РёР±Рѕ С‚РѕР»СЊРєРѕ С†РёС„СЂС‹, Р»РёР±Рѕ С‚РѕР»СЊРєРѕ Р±СѓРєРІС‹
 
 SELECT drink_name FROM drink_info
 WHERE
@@ -33,50 +33,50 @@ calories BETWEEN 30 AND 60;
 SELECT d a te _ n a m e
 FROM b la c k b o o k
 WHERE
-rating IN ( ' о р и ги н а л ь н о ' ,
-' п о ф р я с а ю щ е ' ,
-' В О С Х И Ф И Ф е Л Ь Н О ' ,
-* н е п л о х о ' ) ; - вместо тысячи OR (есть еще NOT IN (NOT можно юзать много где))
+rating IN ( ' Рѕ СЂ Рё РіРё РЅ Р° Р» СЊ РЅ Рѕ ' ,
+' Рї Рѕ С„ СЂ СЏ СЃ Р° СЋ С‰ Рµ ' ,
+' Р’ Рћ РЎ РҐ Р Р¤ Р Р¤ Рµ Р› Р¬ Рќ Рћ ' ,
+* РЅ Рµ Рї Р» Рѕ С… Рѕ ' ) ; - РІРјРµСЃС‚Рѕ С‚С‹СЃСЏС‡Рё OR (РµСЃС‚СЊ РµС‰Рµ NOT IN (NOT РјРѕР¶РЅРѕ СЋР·Р°С‚СЊ РјРЅРѕРіРѕ РіРґРµ))
 
-UPDATE easy_drinks SET amount = 1, main = 'Спрайт' WHERE amount = 1.5;
+UPDATE easy_drinks SET amount = 1, main = 'РЎРїСЂР°Р№С‚' WHERE amount = 1.5;
 
-CREATE TABLE sec_drink (id INT PRIMARY KEY DEFAULT NEXTVAL ('id2'), drink_id INT, // Внешний ключ
+CREATE TABLE sec_drink (id INT PRIMARY KEY DEFAULT NEXTVAL ('id2'), drink_id INT, // Р’РЅРµС€РЅРёР№ РєР»СЋС‡
 CONSTRAINT drink_id_easy_drinks FOREIGN KEY (drink_id) REFERENCES easy_drinks (cock_id));
 
 drinks=# ALTER TABLE easy_drinks ADD COLUMN cock_id INTEGER PRIMARY KEY DEFAULT NEXTVAL ('id1');
 
-SELECT RIGHT ( l o c a t i o n , 2) FROM my__contacts ; - Выборка 2х последних символов
+SELECT RIGHT ( l o c a t i o n , 2) FROM my__contacts ; - Р’С‹Р±РѕСЂРєР° 2С… РїРѕСЃР»РµРґРЅРёС… СЃРёРјРІРѕР»РѕРІ
 
-SELECT SUBSTRING IN D E X ( lo c a t io n , ',', 1)  FROM my_contacts; - выборка подстроки до ","
+SELECT SUBSTRING IN D E X ( lo c a t io n , ',', 1)  FROM my_contacts; - РІС‹Р±РѕСЂРєР° РїРѕРґСЃС‚СЂРѕРєРё РґРѕ ","
 
 UPDATE my_contacts
 SET state = RIGHT(location, 2); 
 
-// Возвращает один столбец с заглавными именем и фамилией где имя содержит : и фамилия :
+// Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРґРёРЅ СЃС‚РѕР»Р±РµС† СЃ Р·Р°РіР»Р°РІРЅС‹РјРё РёРјРµРЅРµРј Рё С„Р°РјРёР»РёРµР№ РіРґРµ РёРјСЏ СЃРѕРґРµСЂР¶РёС‚ : Рё С„Р°РјРёР»РёСЏ :
 select concat(initcap(firstname), ' ', initcap(lastname)) as shortlist from elves where firstname like '%tegil%' or lastname like '%astar%';
 
-// CEILING - округление вверх до ближайшего целого (FLOOR - вниз , TRUNC - усекает число до опр кол-ва знаков после запятой)
+// CEILING - РѕРєСЂСѓРіР»РµРЅРёРµ РІРІРµСЂС… РґРѕ Р±Р»РёР¶Р°Р№С€РµРіРѕ С†РµР»РѕРіРѕ (FLOOR - РІРЅРёР· , TRUNC - СѓСЃРµРєР°РµС‚ С‡РёСЃР»Рѕ РґРѕ РѕРїСЂ РєРѕР»-РІР° Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№)
 SELECT id, hours, CEILING(CEILING(hours) * 0.5) - 1 as liters FROM cycling
 
-// CASE - Позволяет задавать условия
+// CASE - РџРѕР·РІРѕР»СЏРµС‚ Р·Р°РґР°РІР°С‚СЊ СѓСЃР»РѕРІРёСЏ
 SELECT 
   (CASE WHEN n.number % 2 = 0 THEN 'Even' ELSE 'Odd' END) AS is_even
 FROM numbers n;
 
-// CAST - преобразование типа в другой, ROUND - Округление до 2 знаков после запятой yr::real - преобразование типа сразу
+// CAST - РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ С‚РёРїР° РІ РґСЂСѓРіРѕР№, ROUND - РћРєСЂСѓРіР»РµРЅРёРµ РґРѕ 2 Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№ yr::real - РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ С‚РёРїР° СЃСЂР°Р·Сѓ
 SELECT name, weight, price, CAST(ROUND(CAST(price*1000/weight AS DEC(10,2)),2) AS FLOAT) AS price_per_kg FROM products ORDER BY price_per_kg, name;
 
-// Запрос внутри запроса
+// Р—Р°РїСЂРѕСЃ РІРЅСѓС‚СЂРё Р·Р°РїСЂРѕСЃР°
 SELECT * FROM Orders WHERE snum = ( SELECT snum FROM Salespeople WHERE sname = 'Motika'); 
 
-// Выбор всех сумм со значением выше средней на 10/04/1990
+// Р’С‹Р±РѕСЂ РІСЃРµС… СЃСѓРјРј СЃРѕ Р·РЅР°С‡РµРЅРёРµРј РІС‹С€Рµ СЃСЂРµРґРЅРµР№ РЅР° 10/04/1990
 SELECT * FROM Orders WHERE amt > ( SELECT AVG (amt) FROM Orders WHERE odate = 10/04/1990 );
 
-//Join - это иннер джоин (внутреннее объеденение)
+//Join - СЌС‚Рѕ РёРЅРЅРµСЂ РґР¶РѕРёРЅ (РІРЅСѓС‚СЂРµРЅРЅРµРµ РѕР±СЉРµРґРµРЅРµРЅРёРµ)
 SELECT p.pokemon_name, p.str * m.multiplier AS modifiedStrength, m.element FROM pokemon AS p JOIN multipliers AS m 
 ON m.id = p.element_id WHERE (p.str * m.multiplier) >= 40 ORDER BY 2 DESC;
 
-// Объединение запросов (Выведет первый запрос + ниже второй) UNION ALL - выводит все с повторениями из первого запроса
+// РћР±СЉРµРґРёРЅРµРЅРёРµ Р·Р°РїСЂРѕСЃРѕРІ (Р’С‹РІРµРґРµС‚ РїРµСЂРІС‹Р№ Р·Р°РїСЂРѕСЃ + РЅРёР¶Рµ РІС‚РѕСЂРѕР№) UNION ALL - РІС‹РІРѕРґРёС‚ РІСЃРµ СЃ РїРѕРІС‚РѕСЂРµРЅРёСЏРјРё РёР· РїРµСЂРІРѕРіРѕ Р·Р°РїСЂРѕСЃР°
 SELECT model, price FROM PC WHERE model IN (SELECT model FROM Product WHERE maker = 'B')
 UNION
 SELECT model, price FROM Laptop WHERE model IN (SELECT model FROM Product WHERE maker = 'B')
@@ -85,7 +85,7 @@ SELECT price FROM (SELECT price as price FROM pc WHERE model IN (SELECT model FR
  UNION ALL
 SELECT price FROM Laptop WHERE model IN (SELECT model FROM product WHERE maker='A' AND type='Laptop')) AS prod
 
-// Except - Вывести рез-т первого запроса, без результатов второго (INTERSECT (пересечение)- результат запросов присутствует в обоих запросах)
+// Except - Р’С‹РІРµСЃС‚Рё СЂРµР·-С‚ РїРµСЂРІРѕРіРѕ Р·Р°РїСЂРѕСЃР°, Р±РµР· СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РІС‚РѕСЂРѕРіРѕ (INTERSECT (РїРµСЂРµСЃРµС‡РµРЅРёРµ)- СЂРµР·СѓР»СЊС‚Р°С‚ Р·Р°РїСЂРѕСЃРѕРІ РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ РІ РѕР±РѕРёС… Р·Р°РїСЂРѕСЃР°С…)
 SELECT ALL FROM Product WHERE type = 'PC'
 EXCEPT 
 SELECT FROM Product WHERE type = 'Laptop'
@@ -94,58 +94,58 @@ SELECT maker FROM Product WHERE model IN (SELECT model FROM PC WHERE speed >= 75
 INTERSECT
 SELECT maker FROM Product WHERE model IN (SELECT model FROM Laptop WHERE speed >= 750)
 
-//INNER JOIN - Включает в себя рез-ты из 2-х таблиц удовлетворяющих условиям ON !!!
+//INNER JOIN - Р’РєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ СЂРµР·-С‚С‹ РёР· 2-С… С‚Р°Р±Р»РёС† СѓРґРѕРІР»РµС‚РІРѕСЂСЏСЋС‰РёС… СѓСЃР»РѕРІРёСЏРј ON !!!
 SELECT DISTINCT p.maker FROM Product AS p JOIN PC ON p.model = PC.model AND PC.speed >= 450
 
-// Вывести принтер с наибольшей ценой
+// Р’С‹РІРµСЃС‚Рё РїСЂРёРЅС‚РµСЂ СЃ РЅР°РёР±РѕР»СЊС€РµР№ С†РµРЅРѕР№
 SELECT model, price FROM Printer WHERE price = (SELECT MAX(price) FROM Printer)
 
-// Средняя скорость компов от производителя A
+// РЎСЂРµРґРЅСЏСЏ СЃРєРѕСЂРѕСЃС‚СЊ РєРѕРјРїРѕРІ РѕС‚ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ A
 SELECT AVG(speed) FROM PC WHERE model IN (SELECT DISTINCT model FROM Product WHERE maker = 'A' AND type = 'PC')
 
-// HAVING как WHERE но после группировки с помощью GROUP BY (дает список того че надо по одному)
+// HAVING РєР°Рє WHERE РЅРѕ РїРѕСЃР»Рµ РіСЂСѓРїРїРёСЂРѕРІРєРё СЃ РїРѕРјРѕС‰СЊСЋ GROUP BY (РґР°РµС‚ СЃРїРёСЃРѕРє С‚РѕРіРѕ С‡Рµ РЅР°РґРѕ РїРѕ РѕРґРЅРѕРјСѓ)
 SELECT hd FROM PC GROUP BY hd HAVING COUNT(hd) > 1
 
-SELECT class FROM (SELECT name,class FROM ships  // классы, в которые входит только один корабль из базы данных (учесть также корабли в Outcomes)
+SELECT class FROM (SELECT name,class FROM ships  // РєР»Р°СЃСЃС‹, РІ РєРѕС‚РѕСЂС‹Рµ РІС…РѕРґРёС‚ С‚РѕР»СЊРєРѕ РѕРґРёРЅ РєРѕСЂР°Р±Р»СЊ РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹С… (СѓС‡РµСЃС‚СЊ С‚Р°РєР¶Рµ РєРѕСЂР°Р±Р»Рё РІ Outcomes)
 union  
 SELECT class AS name, class FROM classes, outcomes WHERE classes.class = outcomes.ship) A   
 GROUP BY class HAVING COUNT(A.name) = 1
 
-// Сравнение элементов внутри таблицы путем представления ее в виде другой
+// РЎСЂР°РІРЅРµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РІРЅСѓС‚СЂРё С‚Р°Р±Р»РёС†С‹ РїСѓС‚РµРј РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ РµРµ РІ РІРёРґРµ РґСЂСѓРіРѕР№
 SELECT DISTINCT P.model, L.model, P.speed, P.ram FROM PC AS P, PC AS L
 WHERE P.model > L.model AND P.speed = L.speed AND P.ram = L.ram
 
-// ПОСЛЕ ОБЪЕДИНЕНИЯ ТАБЛИЦ В FROM ОБЯЗАТЕЛЬНО УСЛОВИЕ ТИПА p.model = l.model ИНАЧЕ ПИЗДЕЦ. Выводится ноут со скоростью меньше всех ПК
-ALL сравнивает со всеми из вывода (SOME, ANY применяются так же)
+// РџРћРЎР›Р• РћР‘РЄР•Р”РРќР•РќРРЇ РўРђР‘Р›РР¦ Р’ FROM РћР‘РЇР—РђРўР•Р›Р¬РќРћ РЈРЎР›РћР’РР• РўРРџРђ p.model = l.model РРќРђР§Р• РџРР—Р”Р•Р¦. Р’С‹РІРѕРґРёС‚СЃСЏ РЅРѕСѓС‚ СЃРѕ СЃРєРѕСЂРѕСЃС‚СЊСЋ РјРµРЅСЊС€Рµ РІСЃРµС… РџРљ
+ALL СЃСЂР°РІРЅРёРІР°РµС‚ СЃРѕ РІСЃРµРјРё РёР· РІС‹РІРѕРґР° (SOME, ANY РїСЂРёРјРµРЅСЏСЋС‚СЃСЏ С‚Р°Рє Р¶Рµ)
 SELECT DISTINCT p.type, p.model, l.speed FROM Product p, Laptop l
 WHERE p.model = l.model AND l.speed < ALL(SELECT speed FROM PC)
 
-// Применение MIN
+// РџСЂРёРјРµРЅРµРЅРёРµ MIN
 SELECT DISTINCT p.maker, pr.price FROM Product p JOIN Printer pr
 ON p.model = pr.model AND pr.color = 'y' AND pr.price = (SELECT MIN(price) FROM Printer Where color = 'y')
 
-//Итак, агрегатные функции, включенные в предложение SELECT запроса, не содержащего предложения GROUP BY, 
-исполняются над всеми результирующими строками этого запроса.
+//РС‚Р°Рє, Р°РіСЂРµРіР°С‚РЅС‹Рµ С„СѓРЅРєС†РёРё, РІРєР»СЋС‡РµРЅРЅС‹Рµ РІ РїСЂРµРґР»РѕР¶РµРЅРёРµ SELECT Р·Р°РїСЂРѕСЃР°, РЅРµ СЃРѕРґРµСЂР¶Р°С‰РµРіРѕ РїСЂРµРґР»РѕР¶РµРЅРёСЏ GROUP BY, 
+РёСЃРїРѕР»РЅСЏСЋС‚СЃСЏ РЅР°Рґ РІСЃРµРјРё СЂРµР·СѓР»СЊС‚РёСЂСѓСЋС‰РёРјРё СЃС‚СЂРѕРєР°РјРё СЌС‚РѕРіРѕ Р·Р°РїСЂРѕСЃР°.
 SELECT p.maker, AVG(l.screen) FROM Product p, Laptop l WHERE p.model = l.model Group BY p.maker;
 SELECT p.maker, MAX(PC.price) FROM Product p, PC WHERE p.model = PC.model GROUP BY p.maker
 SELECT speed, AVG(price) FROM PC WHERE speed > 600 GROUP BY speed
 
-// HAVING - это как WHERE но для GROUP BY
+// HAVING - СЌС‚Рѕ РєР°Рє WHERE РЅРѕ РґР»СЏ GROUP BY
 SELECT DISTINCT maker, COUNT(MODEL) FROM Product WHERE type = 'PC' GROUP BY maker HAVING COUNT(MODEL) > 2
 
-//Получить список сотрудников, получающих макс зп в своем отделе
+//РџРѕР»СѓС‡РёС‚СЊ СЃРїРёСЃРѕРє СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ, РїРѕР»СѓС‡Р°СЋС‰РёС… РјР°РєСЃ Р·Рї РІ СЃРІРѕРµРј РѕС‚РґРµР»Рµ
 SELECT * FROM EMPLOYEE a WHERE salary = (SELECT MAX(salary) FROM EMPLOYEE b WHERE a.dep_id = b.dep.id)
 
-// Вывести список отделов, количество сотрудников в которых не превышает 3
+// Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє РѕС‚РґРµР»РѕРІ, РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ РІ РєРѕС‚РѕСЂС‹С… РЅРµ РїСЂРµРІС‹С€Р°РµС‚ 3
 SELECT dep_id FROM EMPLOYEE GROUP BY dep_id HAVING count(dep_id) < 4
 
-// Вывести список сотрудников, не имеющих назначенного руководителя, работающего в том-же отделе (мб неправильно, но я думаю что все ок)
+// Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ, РЅРµ РёРјРµСЋС‰РёС… РЅР°Р·РЅР°С‡РµРЅРЅРѕРіРѕ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЏ, СЂР°Р±РѕС‚Р°СЋС‰РµРіРѕ РІ С‚РѕРј-Р¶Рµ РѕС‚РґРµР»Рµ (РјР± РЅРµРїСЂР°РІРёР»СЊРЅРѕ, РЅРѕ СЏ РґСѓРјР°СЋ С‡С‚Рѕ РІСЃРµ РѕРє)
 SELECT a.* FROM EMPLOYEE a WHERE a.chef_id NOT IN (SELECT id FROM Employee WHERE dep_id = a.dep_id)
 
-// Найти список ID отделов с максимальной суммарной зарплатой сотрудников
+// РќР°Р№С‚Рё СЃРїРёСЃРѕРє ID РѕС‚РґРµР»РѕРІ СЃ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ СЃСѓРјРјР°СЂРЅРѕР№ Р·Р°СЂРїР»Р°С‚РѕР№ СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ
 SELECT dep_id FROM EMPLOYEE GROUP BY dep_id HAVING SUM(salary) >= ALL(SELECT SUM(salary) FROM EMPLOYEE GROUP BY dep_id)
 
-// Общее табличное выражение (для запроса создается временнная таблица) Выводится модель с самой большой ценой
+// РћР±С‰РµРµ С‚Р°Р±Р»РёС‡РЅРѕРµ РІС‹СЂР°Р¶РµРЅРёРµ (РґР»СЏ Р·Р°РїСЂРѕСЃР° СЃРѕР·РґР°РµС‚СЃСЏ РІСЂРµРјРµРЅРЅРЅР°СЏ С‚Р°Р±Р»РёС†Р°) Р’С‹РІРѕРґРёС‚СЃСЏ РјРѕРґРµР»СЊ СЃ СЃР°РјРѕР№ Р±РѕР»СЊС€РѕР№ С†РµРЅРѕР№
 WITH prices(model, type, price) AS(
   SELECT model, 'PC' type, price FROM PC 
   UNION 
@@ -155,21 +155,21 @@ WITH prices(model, type, price) AS(
 )
 SELECT model FROM prices WHERE price = ( SELECT MAX(price) FROM prices)
 
-// Вывести для производителей делающих еще и принтеры средних размер ЖД в компе (Вместо третьего AND лучше INTERSECT)
+// Р’С‹РІРµСЃС‚Рё РґР»СЏ РїСЂРѕРёР·РІРѕРґРёС‚РµР»РµР№ РґРµР»Р°СЋС‰РёС… РµС‰Рµ Рё РїСЂРёРЅС‚РµСЂС‹ СЃСЂРµРґРЅРёС… СЂР°Р·РјРµСЂ Р–Р” РІ РєРѕРјРїРµ (Р’РјРµСЃС‚Рѕ С‚СЂРµС‚СЊРµРіРѕ AND Р»СѓС‡С€Рµ INTERSECT)
 SELECT p.maker, AVG(PC.hd) FROM PC, Product p
 WHERE p.model = PC.model AND p.maker IN (SELECT maker FROM Product WHERE type = 'PC' AND p.maker IN (SELECT maker FROM Product WHERE type = 'Printer'))
 GROUP BY p.maker
 
-// COUNT по тому, что группируешь нельзя просто так вычислить, нужен подзапрос, Таблицу всегда надо как-то обозвать
+// COUNT РїРѕ С‚РѕРјСѓ, С‡С‚Рѕ РіСЂСѓРїРїРёСЂСѓРµС€СЊ РЅРµР»СЊР·СЏ РїСЂРѕСЃС‚Рѕ С‚Р°Рє РІС‹С‡РёСЃР»РёС‚СЊ, РЅСѓР¶РµРЅ РїРѕРґР·Р°РїСЂРѕСЃ, РўР°Р±Р»РёС†Сѓ РІСЃРµРіРґР° РЅР°РґРѕ РєР°Рє-С‚Рѕ РѕР±РѕР·РІР°С‚СЊ
 SELECT COUNT(maker) FROM (SELECT maker FROM Product GROUP BY maker HAVING COUNT(model) = 1) t1
 
-// EXISTS выбираем такой корабль, что он был поврежден и после этого у него была битва
-SELECT DISTINCT o.ship FROM Outcomes o, Battles b WHERE b.name = o.battle AND o.result = 'damaged' AND // Поврежденный и его битва
-EXISTS (SELECT ship FROM Outcomes o2 WHERE o2.ship = o.ship AND o2.battle <> o.battle // Есть у этого корабля еще битва
-AND EXISTS(SELECT name FROM Battles b2 WHERE (name = o2.battle OR name = o.battle) AND b2.date > b.date)) // Битва была позже
+// EXISTS РІС‹Р±РёСЂР°РµРј С‚Р°РєРѕР№ РєРѕСЂР°Р±Р»СЊ, С‡С‚Рѕ РѕРЅ Р±С‹Р» РїРѕРІСЂРµР¶РґРµРЅ Рё РїРѕСЃР»Рµ СЌС‚РѕРіРѕ Сѓ РЅРµРіРѕ Р±С‹Р»Р° Р±РёС‚РІР°
+SELECT DISTINCT o.ship FROM Outcomes o, Battles b WHERE b.name = o.battle AND o.result = 'damaged' AND // РџРѕРІСЂРµР¶РґРµРЅРЅС‹Р№ Рё РµРіРѕ Р±РёС‚РІР°
+EXISTS (SELECT ship FROM Outcomes o2 WHERE o2.ship = o.ship AND o2.battle <> o.battle // Р•СЃС‚СЊ Сѓ СЌС‚РѕРіРѕ РєРѕСЂР°Р±Р»СЏ РµС‰Рµ Р±РёС‚РІР°
+AND EXISTS(SELECT name FROM Battles b2 WHERE (name = o2.battle OR name = o.battle) AND b2.date > b.date)) // Р‘РёС‚РІР° Р±С‹Р»Р° РїРѕР·Р¶Рµ
 
 
-// Не знаю как решить (Нужно выводить NULL вместо price если в price встречается NULL)
+// РќРµ Р·РЅР°СЋ РєР°Рє СЂРµС€РёС‚СЊ (РќСѓР¶РЅРѕ РІС‹РІРѕРґРёС‚СЊ NULL РІРјРµСЃС‚Рѕ price РµСЃР»Рё РІ price РІСЃС‚СЂРµС‡Р°РµС‚СЃСЏ NULL)
 SELECT maker, (CASE WHEN price is null THEN NULL ELSE MAX(price) END) as m_price 
 FROM (
 SELECT p.maker, p.model, PC.price as price FROM Product p, PC WHERE p.model = PC.model
@@ -194,7 +194,7 @@ postgres=# select * from best
 postgres-# ;
  bookid | name | author | price | bestid
 --------+------+--------+-------+--------
-(0 ёЄЁюъ)
+(0 С‘Р„РЃСЋСЉ)
 
 
 postgres=# create table rating
@@ -204,13 +204,13 @@ postgres=# select * from rating
 postgres-# ;
  ratingid | crit1 | crit2 | crit3
 ----------+-------+-------+-------
-(0 ёЄЁюъ)
+(0 С‘Р„РЃСЋСЉ)
 
                      ^
 postgres=# insert into books (name, author, price)
 postgres-# values ('451degree', '{Ray Bradberry}', 451);
 INSERT 0 1
-(3 ёЄЁюъш)
+(3 С‘Р„РЃСЋСЉС€)
 
 
 postgres=# select * from books;
@@ -220,14 +220,14 @@ postgres=# select * from books;
       2 | Randbook1 | {"Name Two"}      |   500
       3 | RandBook2 | {"Some Name"}     |  2300
       4 | 451degree | {"Ray Bradberry"} |   451
-(4 ёЄЁюъш)
+(4 С‘Р„РЃСЋСЉС€)
 
 
 postgres=# select * from best;
  bookid |   name    |      author       | price | bestid
 --------+-----------+-------------------+-------+--------
       4 | 451degree | {"Ray Bradberry"} |   451 |      1
-(1 ёЄЁюър)
+(1 С‘Р„РЃСЋСЉСЂ)
 
 
 postgres=# insert into rating
@@ -235,14 +235,14 @@ postgres-# (crit1, crit2, crit3) values (8.2, 8.6, 9.0);
 INSERT 0 1
 postgres=# select * rating
 postgres-# ;
-ОШИБКА:  ошибка синтаксиса (примерное положение: "rating")
-СТРОКА 1: select * rating
+РћРЁРР‘РљРђ:  РѕС€РёР±РєР° СЃРёРЅС‚Р°РєСЃРёСЃР° (РїСЂРёРјРµСЂРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ: "rating")
+РЎРўР РћРљРђ 1: select * rating
                    ^
 postgres=# select * from rating;
  ratingid | crit1 | crit2 | crit3
 ----------+-------+-------+-------
         1 |   8.2 |   8.6 |     9
-(1 ёЄЁюър)
+(1 С‘Р„РЃСЋСЉСЂ)
 
 Lab7
 
@@ -306,24 +306,24 @@ create trigger Calcul after insert or update on B for each row execute procedure
 insert into b values (1, 1, 4, 'add');
 insert into b values (2, 1, 4, 'sub');
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 8лаба
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 8Р»Р°Р±Р°
 
 
-Нормальный вывод таблицы людей с документами
+РќРѕСЂРјР°Р»СЊРЅС‹Р№ РІС‹РІРѕРґ С‚Р°Р±Р»РёС†С‹ Р»СЋРґРµР№ СЃ РґРѕРєСѓРјРµРЅС‚Р°РјРё
 select people.peopleid, people.name, students.sgroup, teachers.predmet
 from people INNER JOIN students on people.peopleid = students.studentid
 INNER JOIN teachers on people.peopleid = teachers.teacherid;
 
 
-Инфа по докам
+РРЅС„Р° РїРѕ РґРѕРєР°Рј
 select * from document inner join typedoc on document.type = typeid;
 
 
-Люди с их документами
+Р›СЋРґРё СЃ РёС… РґРѕРєСѓРјРµРЅС‚Р°РјРё
 select * from people inner join ( document inner join typedoc on document.type = typedoc.typeid) on peopleid = ownerid;
 
 
-вывод конкретный человек и его документы 
+РІС‹РІРѕРґ РєРѕРЅРєСЂРµС‚РЅС‹Р№ С‡РµР»РѕРІРµРє Рё РµРіРѕ РґРѕРєСѓРјРµРЅС‚С‹ 
 select docsofman(peopleid);
 
 
@@ -652,7 +652,7 @@ begin
 end;
 $$ language plpgsql;
 
-=====================================================================================================Вывод представления (ужос)=================
+=====================================================================================================Р’С‹РІРѕРґ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ (СѓР¶РѕСЃ)=================
 
 create or replace function showpeople() returns table (peopleid integer, name text, sgroup text, predmet text) as $$
 declare
@@ -687,11 +687,11 @@ begin
 end;
 $$ language plpgsql;
 
-===============================================================================Выводы
-=таблиц
+===============================================================================Р’С‹РІРѕРґС‹
+=С‚Р°Р±Р»РёС†
 
 
-вывод конкретный человек и его документы 
+РІС‹РІРѕРґ РєРѕРЅРєСЂРµС‚РЅС‹Р№ С‡РµР»РѕРІРµРє Рё РµРіРѕ РґРѕРєСѓРјРµРЅС‚С‹ 
 
 create or replace function docsofman(myID integer) returns table (peopleid integer, name text,  docid integer, typeid integer, type text)
 as $$
